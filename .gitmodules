@@ -1,0 +1,6 @@
+[submodule "fzf.vim"]
+	path = fzf.vim
+	url = https://github.com/junegunn/fzf.vim
+[submodule "bundle/vim-surround"]
+	path = bundle/vim-surround
+	url = https://github.com/tpope/vim-surround
