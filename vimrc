@@ -13,10 +13,10 @@ if has('mouse_sgr')
 endif
 
 " syntax highlighting with true colors in the terminal
-syntax enable
-if has('termguicolors') && $DISPLAY !=? ''
-    set termguicolors
-endif
+" syntax enable
+" if has('termguicolors') && $DISPLAY !=? ''
+"     set termguicolors
+" endif
 
 " paste while in insert mode
 inoremap <silent><C-v> <Esc>:set paste<CR>a<C-r>+<Esc>:set nopaste<CR>a
@@ -51,8 +51,9 @@ syntax on
 filetype plugin indent on
 
 " ---------------- General Settings
-
-" set modeline
+colorscheme industry
+hi Normal guibg=NONE ctermbg=NONE
+set modeline
 set clipboard^=unnamedplus  " system clipboard (requires +clipboard)
 set number                  " enable line numbers
 set relativenumber          " enables relative line numbers
@@ -60,7 +61,6 @@ set confirm                 " ask confirmation for some things, like save before
 set wildmenu                " Tab completion menu when using command mode
 set expandtab               " Tab key inserts spaces not tabs
 set shortmess+=aAcIws       " Hide or shorten certain messages
-set background=dark
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
@@ -68,10 +68,49 @@ set expandtab
 set autoindent
 set showmatch
 set ruler
-set scrolloff=7
-set cursorline
+set scrolloff=6
 
 " ---------------- Cursor Settings
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
+
+" ---------------- Airline
+" Always show statusbar
+set laststatus=2
+" Show PASTE if in paste mode
+let g:airline_detect_paste=1
+" Show airline for tabs too
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline_theme='minimalist'
+let g:airline#extensions#tmuxline#enabled = 0
+let g:airline_mode_map = {
+      \ '__' : '-',
+      \ 'n'  : 'N',
+      \ 'i'  : 'I',
+      \ 'R'  : 'R',
+      \ 'c'  : 'C',
+      \ 'v'  : 'V',
+      \ 'V'  : 'V',
+      \ 's'  : 'S',
+      \ 'S'  : 'S',
+      \ ''   : 'S'}
+
+" ---------------- Tmuxline
+" let g:tmuxline_preset = {
+"       \'a'    : '#S',
+"       \'c'    : '%Y-%m-%d | %a | %R',
+"       \'win'  : ['#I','#W'],
+"       \'cwin' : ['#I','#W'],
+"       \'w'    : '#(echo "Hi")',
+"       \'y'    : '#(~/.vim/battery_indicator.sh)',
+"       \'x'    : '#(~/.vim/spotify.sh)',
+"       \'z'    : '#h'}
+
+" ---------------- ALE
+let g:ale_sign_error = '●' " Less aggressive than the default '>>'
+let g:ale_sign_warning = '.'
+let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
+
+
