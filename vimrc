@@ -57,7 +57,7 @@ set modeline
 set clipboard^=unnamedplus  " system clipboard (requires +clipboard)
 set number                  " enable line numbers
 set relativenumber          " enables relative line numbers
-set confirm                 " ask confirmation for some things, like save before quit, etc.
+" set confirm                 " ask confirmation for some things, eg. save before quit
 set wildmenu                " Tab completion menu when using command mode
 set expandtab               " Tab key inserts spaces not tabs
 set shortmess+=aAcIws       " Hide or shorten certain messages
@@ -108,9 +108,18 @@ let g:airline_mode_map = {
 "       \'x'    : '#(~/.vim/spotify.sh)',
 "       \'z'    : '#h'}
 
+" ---------------- Emmet
+" let g:user_emmet_leader_key='<Tab>'
+let g:user_emmet_settings = {
+  \  'javascript.jsx' : {
+    \      'extends' : 'jsx',
+    \  },
+  \}
+
 " ---------------- ALE
 let g:ale_sign_error = '●' " Less aggressive than the default '>>'
 let g:ale_sign_warning = '.'
 let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
 
-
+" ---------------- JavaScript
+autocmd BufWritePost *.js AsyncRun -post=checktime ./node_modules/.bin/eslint --fix %
