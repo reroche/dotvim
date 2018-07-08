@@ -26,17 +26,6 @@ endif
 " paste while in insert mode
 inoremap <silent><C-v> <Esc>:set paste<CR>a<C-r>+<Esc>:set nopaste<CR>a
 
-" alt defaults
-nnoremap 0 ^
-nnoremap Y y$
-nnoremap n nzzzv
-nnoremap N Nzzzv
-nnoremap <Tab> ==j
-
-" j=gj k=gk but preserve numbered jumps ie. 12j or 30k
-nnoremap <buffer><silent><expr>j v:count ? 'j' : 'gj'
-nnoremap <buffer><silent><expr>k v:count ? 'k' : 'gk'
-
 " Reload changes if file changed outside of vim (requires autoread)
 augroup load_changed_file
     autocmd!
@@ -56,13 +45,11 @@ syntax on
 filetype plugin indent on
 
 " ---------------- General Settings
-colorscheme onedark
-hi Normal guibg=NONE ctermbg=NONE
 set modeline
 set clipboard^=unnamedplus  " system clipboard (requires +clipboard)
 set number                  " enable line numbers
 set relativenumber          " enables relative line numbers
-" set confirm                 " ask confirmation for some things, eg. save before quit
+set confirm                 " ask confirmation for some things, eg. save before quit
 set wildmenu                " Tab completion menu when using command mode
 set expandtab               " Tab key inserts spaces not tabs
 set shortmess+=aAcIws       " Hide or shorten certain messages
@@ -74,8 +61,15 @@ set autoindent
 set showmatch
 set ruler
 set scrolloff=6
+set cursorline
+
+" colorscheme
+colorscheme onedark
+" hi CursorLine guibg=#3e424c guifg=NONE
+" hi Normal guibg=NONE ctermbg=NONE
 
 " ---------------- Cursor Settings
+" Block for Normal, Line for Insert, Underline for Replace
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
