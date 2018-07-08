@@ -13,10 +13,10 @@ if has('mouse_sgr')
 endif
 
 " syntax highlighting with true colors in the terminal
-" syntax enable
-" if has('termguicolors') && $DISPLAY !=? ''
-"     set termguicolors
-" endif
+syntax enable
+if has('termguicolors') && $DISPLAY !=? ''
+    set termguicolors
+endif
 
 " paste while in insert mode
 inoremap <silent><C-v> <Esc>:set paste<CR>a<C-r>+<Esc>:set nopaste<CR>a
