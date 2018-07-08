@@ -2,9 +2,7 @@
 " rer's vim config
 " ================
 
-" ---------------- ArchLabs default
-
-runtime! archlinux.vim
+" runtime! archlinux.vim
 
 " enable mouse.. sgr is better but not every term supports it
 set mouse=a
@@ -12,10 +10,17 @@ if has('mouse_sgr')
     set ttymouse=sgr
 endif
 
-" syntax highlighting with true colors in the terminal
-syntax enable
-if has('termguicolors') && $DISPLAY !=? ''
+" color options
+set termguicolors
+let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
+let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
+if (empty($TMUX))
+  if (has("nvim"))
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  if (has("termguicolors"))
     set termguicolors
+  endif
 endif
 
 " paste while in insert mode
@@ -51,7 +56,7 @@ syntax on
 filetype plugin indent on
 
 " ---------------- General Settings
-colorscheme industry
+colorscheme onedark
 hi Normal guibg=NONE ctermbg=NONE
 set modeline
 set clipboard^=unnamedplus  " system clipboard (requires +clipboard)
@@ -83,7 +88,7 @@ let g:airline_detect_paste=1
 " Show airline for tabs too
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme='minimalist'
+let g:airline_theme='onedark'
 let g:airline#extensions#tmuxline#enabled = 0
 let g:airline_mode_map = {
       \ '__' : '-',
