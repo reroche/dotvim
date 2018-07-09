@@ -76,6 +76,7 @@ set hlsearch  "Highlight on search
 set ignorecase  "Search ignoring case
 set smartcase  "Search using smartcase
 set incsearch  "Start searching immediately
+set hidden
 
 " strip whitespace
 autocmd BufWritePre * :%s/\s\+$//e
@@ -108,10 +109,14 @@ nnoremap <buffer><silent><expr>k v:count ? 'k' : 'gk'
 
 vnoremap jk <esc>
 inoremap jk <esc>
-nnoremap <leader>q :q<CR>
 nnoremap U <C-r>
+" Remove search highlights:
 nnoremap <leader>/ :noh<CR>
-" nnoremap <Space> i*<Esc>r
+" Switch buffers:
+nnoremap [ :bp<CR>
+nnoremap ] :bn<CR>
+" Close buffer:
+nnoremap <leader>d :bd<CR>
 
 " ===================================================
 " Airline
