@@ -1,27 +1,63 @@
-[submodule "fzf.vim"]
-	path = fzf.vim
-	url = https://github.com/junegunn/fzf.vim
-[submodule "bundle/vim-surround"]
-	path = bundle/vim-surround
-	url = https://github.com/tpope/vim-surround
+#                 _               _                     _             _
+#   _ __ ___ _ __( )___    __   _(_)_ __ ___      _ __ | |_   _  __ _(_)_ __  ___
+#  | '__/ _ | '__|// __|   \ \ / | | '_ ` _ \    | '_ \| | | | |/ _` | | '_ \/ __|
+#  | | |  __| |    \__ \    \ V /| | | | | | |   | |_) | | |_| | (_| | | | | \__ \
+#  |_|  \___|_|    |___/     \_/ |_|_| |_| |_|   | .__/|_|\__,_|\__, |_|_| |_|___/
+#                                                |_|            |___/
+
+# =========
+# Aesthetic
+# =========
+[submodule "bundle/vim-coloresque"]
+	path = bundle/vim-coloresque
+	url = https://github.com/gko/vim-coloresque
+[submodule "bundle/onedark.vim"]
+	path = bundle/onedark.vim
+	url = https://github.com/reroche/onedark.vim
 [submodule "bundle/vim-airline"]
 	path = bundle/vim-airline
 	url = https://github.com/vim-airline/vim-airline
-[submodule "bundle/vim-airline-themes"]
-	path = bundle/vim-airline-themes
-	url = https://github.com/vim-airline/vim-airline-themes
-# [submodule "bundle/tmuxline.vim"]
-# 	path = bundle/tmuxline.vim
-# 	url = https://github.com/edkolev/tmuxline.vim
-[submodule "vim-javascript"]
-	path = vim-javascript
-	url = https://github.com/pangloss/vim-javascript
-[submodule "bundle/vim-javascript"]
-	path = bundle/vim-javascript
-	url = https://github.com/pangloss/vim-javascript
-[submodule "bundle/vim-jsx"]
-	path = bundle/vim-jsx
-	url = https://github.com/mxw/vim-jsx
+[submodule "bundle/goyo.vim"]
+	path = bundle/goyo.vim
+	url = https://github.com/junegunn/goyo.vim
+[submodule "bundle/limelight.vim"]
+	path = bundle/limelight.vim
+	url = https://github.com/junegunn/limelight.vim
+[submodule "bundle/vim-devicons"]
+	path = bundle/vim-devicons
+	url = https://github.com/ryanoasis/vim-devicons
+[submodule "bundle/vim-nerdtree-syntax-highlight"]
+	path = bundle/vim-nerdtree-syntax-highlight
+	url = https://github.com/tiagofumo/vim-nerdtree-syntax-highlight
+
+# =========
+# Utilities
+# =========
+[submodule "bundle/vim-surround"]
+	path = bundle/vim-surround
+	url = https://github.com/tpope/vim-surround
+[submodule "bundle/auto-pairs"]
+	path = bundle/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs
+[submodule "bundle/fzf.vim"]
+	path = bundle/fzf.vim
+	url = https://github.com/junegunn/fzf.vim
+[submodule "bundle/nerdcommenter"]
+	path = bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule "bundle/vim-repeat"]
+	path = bundle/vim-repeat
+	url = https://github.com/tpope/vim-repeat
+[submodule "bundle/gitignore"]
+	path = bundle/gitignore
+	url = https://github.com/vim-scripts/gitignore
+
+# ===========================
+# Generic Programming Support
+# ===========================
 [submodule "bundle/emmet-vim"]
 	path = bundle/emmet-vim
 	url = https://github.com/mattn/emmet-vim
@@ -31,12 +67,42 @@
 [submodule "bundle/asyncrun.vim"]
 	path = bundle/asyncrun.vim
 	url = https://github.com/skywind3000/asyncrun.vim
-[submodule "bundle/vim-coloresque"]
-	path = bundle/vim-coloresque
-	url = https://github.com/gko/vim-coloresque
-[submodule "bundle/onedark.vim"]
-	path = bundle/onedark.vim
-	url = https://github.com/reroche/onedark.vim
+
+# ==========
+# JavaScript
+# ==========
+[submodule "bundle/vim-javascript"]
+	path = bundle/vim-javascript
+	url = https://github.com/pangloss/vim-javascript
+[submodule "bundle/vim-jsx"]
+	path = bundle/vim-jsx
+	url = https://github.com/mxw/vim-jsx
+# Keep this one last because the knuckleheads over at styled-components
+# named their master branch "main"...
 [submodule "bundle/vim-styled-components"]
 	path = bundle/vim-styled-components
 	url = https://github.com/styled-components/vim-styled-components
+
+# ====================
+# Markdown and Editing
+# ====================
+
+[submodule "bundle/bullets.vim"]
+	path = bundle/bullets.vim
+	url = https://github.com/dkarter/bullets.vim
+
+# =========
+# Disabled
+# =========
+;[submodule "bundle/tmuxline.vim"]
+	;path = bundle/tmuxline.vim
+	;url = https://github.com/edkolev/tmuxline.vim
+;[submodule "bundle/vim-airline-themes"]
+	;path = bundle/vim-airline-themes
+	;url = https://github.com/vim-airline/vim-airline-themes
+# [submodule "bundle/vim-commentary"]
+# 	path = bundle/vim-commentary
+# 	url = https://github.com/tpope/vim-commentary
+
+# Uncategorized
+
